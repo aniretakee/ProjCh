@@ -60,6 +60,8 @@ class Tree:
             return
 
         if len(node.children) == 0:
+            if current_path == '.':
+                raise ValueError('Code should not be executed here!')
             shutil.rmtree(current_path)
 
         for child in node.children:
